@@ -5,13 +5,14 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import { requestSearch } from "../requests/services/search";
+import { Person } from "../models/Person";
 
 const QUERY_KEY: QueryKey = ["search"];
 
 export const useSearch = (
   { q }: { q: string },
-  onSuccess: any,
-  onError: any,
+  onSuccess: ({ data }: { data: Array<Person> }) => void,
+  onError: (e: any) => void,
   enabled: boolean
 ) => {
   return useQuery([...QUERY_KEY, q], requestSearch, {

@@ -9,7 +9,6 @@ export const requestSearch = async ({
   data: Array<Person>;
 }> => {
   const [_, q] = queryKey;
-  console.log(q);
   return await request({
     url: "/search",
     params: {
