@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3001/api/yellow-pages/", // extract to .env file
+  baseURL: import.meta.env.VITE_API_BASE_URL, // extract to .env file
 });
 
 export const request = ({ ...options }) => {
