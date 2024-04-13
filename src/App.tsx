@@ -41,12 +41,12 @@ function App() {
   };
   return (
     <Container className={"main__warpper"}>
+      <h1>Yellow Pages</h1>
       <div className="search_input__wrapper">
         <InputSUI
           placeholder="Search..."
           onChange={(e) => setSearchTerm(e.target.value)}
           handleSerach={handleSerach}
-          name="Search"
           value={searchTerm}
         />
       </div>

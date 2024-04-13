@@ -5,17 +5,9 @@ import * as _ from "lodash";
 import { Icon, Input } from "semantic-ui-react";
 
 interface IProps {
-  type?: string;
-  id?: string;
-  name?: string;
-  label?: string;
   value?: string;
-  className?: string;
   placeholder?: string;
   onChange?: (event: React.ChangeEvent<any>, data: SearchProps) => void;
-  disabled?: boolean;
-  onFocus?: () => void;
-  onBlur?: () => void;
   handleSerach: () => void;
 }
 
@@ -25,6 +17,7 @@ const InputSUI = ({
   placeholder,
   handleSerach,
 }: IProps) => {
+  console.log(value);
   return (
     <Input
       className="input__wrapper"
@@ -32,8 +25,9 @@ const InputSUI = ({
       placeholder={placeholder}
       onChange={onChange}
       action={{
-        icon: <Icon name="search" inverted circular link />,
+        icon: <Icon name="search" inverted circular link  />,
         onClick: handleSerach,
+       'data-testid':"btnTestElement"
       }}
     />
   );
